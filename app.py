@@ -30,7 +30,7 @@ from google.oauth2.credentials import Credentials
 
 
 #global variables
-
+start=str(time.time())
 #holds live streaming data
 live_data=[] 
 #websocket 
@@ -167,7 +167,7 @@ def run_it():
     #this constrain is because azure fn time limit is 5min
     #remaining 30s is for dataprocessing and upload
     #time module is imported in __init__.py
-    time.sleep(10)
+    time.sleep(300)
 
 
 
@@ -183,7 +183,9 @@ def run_it():
     os.remove(file_path)
 
     #execution is finished
-    status='Successful'
+    global start
+    ended=str(time.time())
+    status='Successful'+'$$' +start+ '$$' + ended
 
     return status
 
