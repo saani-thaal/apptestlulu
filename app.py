@@ -5,8 +5,6 @@ app = Flask(__name__)
 def hello():
     return status
 
-status = 'not yet'
-
 import datetime, time
 import logging
 import pandas as pd
@@ -30,7 +28,7 @@ from google.oauth2.credentials import Credentials
 
 
 #global variables
-start=str(time.time())
+started=str(time.time())
 #holds live streaming data
 live_data=[] 
 #websocket 
@@ -183,9 +181,9 @@ def run_it():
     os.remove(file_path)
 
     #execution is finished
-    global start
+    global started
     ended=str(time.time())
-    status='Successful'+'$$' +start+ '$$' + ended
+    status='Successful'+'$$' +started+ '$$' + ended
 
     return status
 
