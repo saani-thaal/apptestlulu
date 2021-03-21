@@ -10,7 +10,6 @@ status = 'not yet'
 import datetime, time
 import logging
 import pandas as pd
-import fastparquet
 import os
 
 
@@ -107,25 +106,14 @@ def convert(live_data):
     #datetime module is imported in __init__.py
     file_name = str(datetime.date.today()) + '-' + 'm' #format: yyyy-mm-dd-x ; x={'m': 'MARKET_DATA', 's': 'SNAPQUOTE'}
     file_path = os.path.join(scriptdir, file_name)
-    df.to_parquet(file_path,compression='gzip') #saved in curr directory
+    df.to_csv(file_path) #saved in curr directory
 
     return file_name, file_path
 
 
 
 
-def main(mytimer: func.TimerRequest) -> None:
-    #IST 5hr 30min ahead of UTC
-    utc_timestamp = datetime.datetime.utcnow().replace(
-        tzinfo=datetime.timezone.utc).isoformat()
-    
-    
-    #write your here
-    status='Unsuccessfule'
-    
-    status=run_it()
 
-    logging.info('Python timer trigger function run is %s by %s', status,utc_timestamp)
 
 
 #websocket
