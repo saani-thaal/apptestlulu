@@ -136,7 +136,7 @@ def run_it():
 
     #credentials
     username='242661'
-    password='Masala0!'
+    password='&Khyati0'
     api_secret='sGWyHQ7B0PneyCkQ38No7CPKSpJdFkN1uzghvvdD976Pcvju8B9KdPznQKe6GHP5'
     app_id='CetEoSQctj'
     twoFA='khyati'
@@ -206,4 +206,4 @@ status=run_it()
 
 
 if __name__ == '__main__':
-    main()
+    app.run()
