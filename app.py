@@ -183,8 +183,7 @@ def run_it():
     #execution is finished
     #global started
     #ended=str(time.time())
-    status='Successful'+'$$' +started+ '$$' + ended
-
+    status='Successful'
     return status
 
 
