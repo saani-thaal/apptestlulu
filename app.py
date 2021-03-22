@@ -28,7 +28,7 @@ from google.oauth2.credentials import Credentials
 
 
 #global variables
-started=str(time.time())
+#started=str(time.time())
 #holds live streaming data
 live_data=[] 
 #websocket 
@@ -181,8 +181,8 @@ def run_it():
     os.remove(file_path)
 
     #execution is finished
-    global started
-    ended=str(time.time())
+    #global started
+    #ended=str(time.time())
     status='Successful'+'$$' +started+ '$$' + ended
 
     return status
